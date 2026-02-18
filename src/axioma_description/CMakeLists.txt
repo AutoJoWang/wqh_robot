@@ -5,20 +5,12 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# find dependencies
 find_package(ament_cmake REQUIRED)
-find_package(gazebo_ros REQUIRED)
-find_package(gazebo_plugins REQUIRED)
 
-# Install directories
 install(
-  DIRECTORY models urdf worlds rviz launch
+  DIRECTORY urdf meshes rviz launch
   DESTINATION share/${PROJECT_NAME}
 )
-
-# Install environment hooks
-ament_environment_hooks("${CMAKE_CURRENT_SOURCE_DIR}/env-hooks/axioma_description.sh.in")
-ament_environment_hooks("${CMAKE_CURRENT_SOURCE_DIR}/env-hooks/axioma_description.dsv.in")
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

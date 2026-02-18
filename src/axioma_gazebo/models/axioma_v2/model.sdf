@@ -1,0 +1,432 @@
+<sdf version='1.9'>
+  <model name='axioma_v2'>
+
+    <link name='base_link'>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>5.0</mass>
+        <inertia>
+          <ixx>0.1135</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.426</iyy>
+          <iyz>0</iyz>
+          <izz>0.5205</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://axioma_v2/meshes/collision/chasis.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://axioma_v2/meshes/visual/chasis.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.05 0.1 0.35 1</diffuse>
+          <ambient>0.02 0.05 0.15 1</ambient>
+          <specular>0.3 0.3 0.4 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ==================== WHEEL 1 (front-left) ==================== -->
+    <joint name='base_to_wheel1' type='revolute'>
+      <pose relative_to='base_link'>0.06442 0.07385 0.04068 3.141516 -0 3.141516</pose>
+      <parent>base_link</parent>
+      <child>wheel_1</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+    </joint>
+    <link name='wheel_1'>
+      <pose relative_to='base_to_wheel1'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.0029</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0029</iyy>
+          <iyz>0</iyz>
+          <izz>0.0056</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_1_collision'>
+        <pose>0 0.02 0 -1.5707 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0381</radius>
+            <length>0.03</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='wheel_1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://axioma_v2/meshes/visual/llanta.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.15 0.15 0.15 1</diffuse>
+          <ambient>0.05 0.05 0.05 1</ambient>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ==================== WHEEL 2 (rear-left) ==================== -->
+    <joint name='base_to_wheel2' type='revolute'>
+      <pose relative_to='base_link'>-0.071224 0.07385 0.04068 3.141516 -0 3.141516</pose>
+      <parent>base_link</parent>
+      <child>wheel_2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+    </joint>
+    <link name='wheel_2'>
+      <pose relative_to='base_to_wheel2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.0029</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0029</iyy>
+          <iyz>0</iyz>
+          <izz>0.0056</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_2_collision'>
+        <pose>0 0.02 0 -1.5707 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0381</radius>
+            <length>0.03</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='wheel_2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://axioma_v2/meshes/visual/llanta.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.15 0.15 0.15 1</diffuse>
+          <ambient>0.05 0.05 0.05 1</ambient>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ==================== WHEEL 3 (rear-right) ==================== -->
+    <joint name='base_to_wheel3' type='revolute'>
+      <pose relative_to='base_link'>-0.071224 -0.0625 0.04068 0 0 3.141592</pose>
+      <parent>base_link</parent>
+      <child>wheel_3</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+    </joint>
+    <link name='wheel_3'>
+      <pose relative_to='base_to_wheel3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.0029</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0029</iyy>
+          <iyz>0</iyz>
+          <izz>0.0056</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_3_collision'>
+        <pose>0 0.02 0 -1.5707 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0381</radius>
+            <length>0.03</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='wheel_3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://axioma_v2/meshes/visual/llanta.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.15 0.15 0.15 1</diffuse>
+          <ambient>0.05 0.05 0.05 1</ambient>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ==================== WHEEL 4 (front-right) ==================== -->
+    <joint name='base_to_wheel4' type='revolute'>
+      <pose relative_to='base_link'>0.064423 -0.0625 0.04068 0 0 3.141592</pose>
+      <parent>base_link</parent>
+      <child>wheel_4</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+    </joint>
+    <link name='wheel_4'>
+      <pose relative_to='base_to_wheel4'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.0029</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0029</iyy>
+          <iyz>0</iyz>
+          <izz>0.0056</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_4_collision'>
+        <pose>0 0.02 0 -1.5707 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>0.0381</radius>
+            <length>0.03</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <soft_cfm>0</soft_cfm>
+              <soft_erp>0.2</soft_erp>
+              <kp>1e+13</kp>
+              <kd>1</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0.01</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='wheel_4_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://axioma_v2/meshes/visual/llanta.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.15 0.15 0.15 1</diffuse>
+          <ambient>0.05 0.05 0.05 1</ambient>
+          <specular>0.2 0.2 0.2 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+
+    <!-- ==================== LIDAR SENSOR ==================== -->
+    <link name="base_scan">
+      <pose>0 0 0.15 0 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>0.001</ixx>
+          <ixy>0.000</ixy>
+          <ixz>0.000</ixz>
+          <iyy>0.001</iyy>
+          <iyz>0.000</iyz>
+          <izz>0.001</izz>
+        </inertia>
+        <mass>0.125</mass>
+      </inertial>
+      <collision name="lidar_sensor_collision">
+        <geometry>
+          <cylinder>
+            <radius>0.035</radius>
+            <length>0.030</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="lidar_sensor_visual">
+        <geometry>
+          <cylinder>
+            <radius>0.035</radius>
+            <length>0.030</length>
+          </cylinder>
+        </geometry>
+      </visual>
+      <sensor name="hls_lfcd_lds" type="gpu_lidar">
+        <pose>0 0 0 0 0 0</pose>
+        <always_on>true</always_on>
+        <visualize>true</visualize>
+        <update_rate>20</update_rate>
+        <topic>scan</topic>
+        <gz_frame_id>base_scan</gz_frame_id>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>360</samples>
+              <resolution>1</resolution>
+              <min_angle>0.000000</min_angle>
+              <max_angle>6.280000</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.120000</min>
+            <max>3.5</max>
+            <resolution>0.015000</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </lidar>
+      </sensor>
+    </link>
+
+    <joint name="lidar_joint" type="fixed">
+      <parent>base_link</parent>
+      <child>base_scan</child>
+    </joint>
+
+    <!-- ==================== GZ-SIM PLUGINS ==================== -->
+
+    <!-- Differential drive (skid-steer 4WD) -->
+    <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
+      <left_joint>base_to_wheel1</left_joint>
+      <left_joint>base_to_wheel2</left_joint>
+      <right_joint>base_to_wheel4</right_joint>
+      <right_joint>base_to_wheel3</right_joint>
+      <wheel_separation>0.1725</wheel_separation>
+      <wheel_radius>0.0381</wheel_radius>
+      <max_wheel_torque>20</max_wheel_torque>
+      <max_wheel_acceleration>1</max_wheel_acceleration>
+      <odom_publish_frequency>50</odom_publish_frequency>
+      <topic>cmd_vel</topic>
+      <odom_topic>odom</odom_topic>
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_link</child_frame_id>
+      <tf_topic>tf</tf_topic>
+    </plugin>
+
+    <!-- Joint state publisher -->
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+      <topic>joint_states</topic>
+      <update_rate>20</update_rate>
+      <joint_name>base_to_wheel1</joint_name>
+      <joint_name>base_to_wheel2</joint_name>
+      <joint_name>base_to_wheel3</joint_name>
+      <joint_name>base_to_wheel4</joint_name>
+    </plugin>
+
+  </model>
+</sdf>

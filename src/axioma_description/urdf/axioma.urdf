@@ -5,16 +5,16 @@
   <link name="base_link">
     <visual>
       <geometry>
-        <mesh filename="package://axioma_description/models/axioma_v2/meshes/visual/chasis.stl" scale="1 1 1"/>
+        <mesh filename="package://axioma_description/meshes/visual/chasis.stl" scale="1 1 1"/>
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <material name="blue">
-        <color rgba="0.2 0.2 0.8 1.0"/>
+      <material name="dark_blue">
+        <color rgba="0.05 0.1 0.35 1.0"/>
       </material>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://axioma_description/models/axioma_v2/meshes/collision/chasis.dae" scale="1 1 1"/>
+        <mesh filename="package://axioma_description/meshes/collision/chasis.dae" scale="1 1 1"/>
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </collision>
@@ -28,11 +28,11 @@
   <link name="wheel_1">
     <visual>
       <geometry>
-        <mesh filename="package://axioma_description/models/axioma_v2/meshes/visual/llanta.stl" scale="1 1 1"/>
+        <mesh filename="package://axioma_description/meshes/visual/llanta.stl" scale="1 1 1"/>
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <material name="black">
-        <color rgba="0.5 0.5 0.5 1"/>
+      <material name="dark_rubber">
+        <color rgba="0.15 0.15 0.15 1"/>
       </material>
     </visual>
     <collision>
@@ -58,10 +58,10 @@
   <link name="wheel_2">
     <visual>
       <geometry>
-        <mesh filename="package://axioma_description/models/axioma_v2/meshes/visual/llanta.stl" scale="1 1 1"/>
+        <mesh filename="package://axioma_description/meshes/visual/llanta.stl" scale="1 1 1"/>
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <material name="black"/>
+      <material name="dark_rubber"/>
     </visual>
     <collision>
       <geometry>
@@ -86,10 +86,10 @@
   <link name="wheel_3">
     <visual>
       <geometry>
-        <mesh filename="package://axioma_description/models/axioma_v2/meshes/visual/llanta.stl" scale="1 1 1"/>
+        <mesh filename="package://axioma_description/meshes/visual/llanta.stl" scale="1 1 1"/>
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <material name="black"/>
+      <material name="dark_rubber"/>
     </visual>
     <collision>
       <geometry>
@@ -114,10 +114,10 @@
   <link name="wheel_4">
     <visual>
       <geometry>
-        <mesh filename="package://axioma_description/models/axioma_v2/meshes/visual/llanta.stl" scale="1 1 1"/>
+        <mesh filename="package://axioma_description/meshes/visual/llanta.stl" scale="1 1 1"/>
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <material name="black"/>
+      <material name="dark_rubber"/>
     </visual>
     <collision>
       <geometry>
@@ -145,7 +145,7 @@
         <cylinder radius="0.035" length="0.030"/>
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <material name="black"/>
+      <material name="dark_rubber"/>
     </visual>
     <collision>
       <geometry>

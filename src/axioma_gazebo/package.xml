@@ -3,22 +3,25 @@
 <package format="3">
   <name>axioma_gazebo</name>
   <version>1.0.0</version>
-  <description>Axioma Gazebo simulation launch files for ROS2 Humble</description>
+  <description>Axioma Gz Sim simulation launch files for ROS2 Humble</description>
   <maintainer email="ing.marioalvarezvallejo@gmail.com">Mario David Alvarez Vallejo</maintainer>
   <license>Apache-2.0</license>
 
-  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_python</buildtool_depend>
 
-  <depend>gazebo_ros</depend>
-  <depend>gazebo_plugins</depend>
+  <depend>ros_gz_sim</depend>
+  <depend>ros_gz_bridge</depend>
   <depend>robot_state_publisher</depend>
   <depend>axioma_description</depend>
   <depend>xacro</depend>
+  <depend>rclpy</depend>
+  <depend>tf2_ros</depend>
+  <depend>nav_msgs</depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
   <export>
-    <build_type>ament_cmake</build_type>
+    <build_type>ament_python</build_type>
   </export>
 </package>
