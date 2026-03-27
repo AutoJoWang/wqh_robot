@@ -1,28 +1,5 @@
 # Axioma 4WD Autonomous Mobile Robot
 
-<div align="center">
-<img src="images/Portada.gif" width="85%"/>
-</div>
-
-</br>
-
-<div align="center" width="70%">
-
-[![C++](https://img.shields.io/badge/C++-17-blue)](#)
-[![Python](https://img.shields.io/badge/Python-3.8+-yellow?logo=python)](#)
-[![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04-E95420?logo=ubuntu)](#)
-[![ROS2 Humble](https://img.shields.io/badge/ROS2-Humble-22314E?logo=ros)](#)
-[![Gazebo Harmonic](https://img.shields.io/badge/Gazebo-Harmonic-orange)](#)
-[![Nav2](https://img.shields.io/badge/Nav2-Humble-00599C)](#)
-[![SLAM Toolbox](https://img.shields.io/badge/SLAM-Toolbox-green)](#)
-[![License](https://img.shields.io/badge/License-BSD-green.svg)](LICENSE)
-[![GitHub](https://img.shields.io/badge/GitHub-MrDavidAlv-181717?logo=github)](https://github.com/MrDavidAlv/Axioma_robot)
-![Visitors](https://komarev.com/ghpvc/?username=MrDavidAlv&repo=Axioma_robot&label=Visitors&color=brightgreen)
-
-</div>
-
----
-
 ## Quick Start
 
 ```bash
@@ -55,23 +32,6 @@ See [Installation](#installation) and [Usage](#usage) for detailed instructions.
 
 ---
 
-## Table of Contents
-
-- [Quick Start](#quick-start)
-- [Description](#description)
-- [Features](#features)
-- [Robot Gallery](#robot-gallery)
-- [Video Demonstrations](#video-demonstrations)
-- [System Architecture](#system-architecture)
-- [Mathematical Model](#mathematical-model)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Build](#build)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contact](#contact)
-
----
 
 ## Description
 
@@ -89,84 +49,6 @@ This project implements autonomous navigation software using ROS2 for the **Axio
 
 Mobile robot, autonomous navigation, industrial logistics, trajectory planning, ROS2 Humble, Gazebo Harmonic, Nav2, SLAM, differential drive, skid-steering
 
----
-
-## Features
-
-<div align="center">
-
-| Feature | Description |
-|---------|-------------|
-| **Real-time SLAM** | Simultaneous mapping and localization using SLAM Toolbox in asynchronous mode |
-| **Autonomous Navigation** | Full Nav2 stack with global planner (NavFn/Dijkstra) and local controller (DWB) |
-| **Obstacle Avoidance** | Real-time detection and evasion using 360-degree RPLidar A1 LiDAR |
-| **Teleoperation GUI** | PyQt5 graphical interface with keyboard, virtual joystick, and slider control modes |
-| **Keyboard Teleoperation** | Standard teleop_twist_keyboard support for manual control during mapping |
-| **Full Visualization** | RViz2 with dynamic costmaps, planned trajectories, and AMCL particle clouds |
-| **4WD Differential Robot** | Robust odometry from 1000 PPR encoders with skid-steering kinematics |
-| **Gazebo Harmonic Simulation** | Modern Gazebo Sim with ros_gz bridge for all sensor and actuator interfaces |
-| **Configurable Parameters** | All Nav2, AMCL, SLAM, and DWB parameters tunable per application |
-| **Open Source** | BSD license, free for academic, research, and commercial use |
-
-</div>
-
----
-
-## Robot Gallery
-
-<div align="center">
-<table>
-  <tr>
-    <td><img src="images/robot1.jpg" width="400"/></td>
-    <td><img src="images/robot2.jpg" width="400"/></td>
-  </tr>
-  <tr>
-    <td><img src="images/robot3.jpg" width="400"/></td>
-    <td><img src="images/robot4.jpg" width="400"/></td>
-  </tr>
-  <tr>
-    <td><img src="images/robot5.png" width="400"/></td>
-    <td><img src="images/robot6.jpg" width="400"/></td>
-  </tr>
-</table>
-</div>
-
----
-
-## Video Demonstrations
-
-<div align="center">
-
-[![Full Demonstration](https://img.youtube.com/vi/hl_HeULvuvQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=hl_HeULvuvQ)
-
-**[Watch full demonstration on YouTube](https://www.youtube.com/watch?v=hl_HeULvuvQ)**
-
-*Complete walkthrough: real-time SLAM, map saving, and autonomous Nav2 navigation*
-
-</div>
-
-> **Note:** The videos below correspond to an earlier version built with ROS2 Foxy. The core functionality remains the same in the current Humble release with improvements in performance and stability.
-
-<div align="center">
-
-| **Autonomous Navigation** | **SLAM and Mapping** |
-|:------------------------:|:-----------------:|
-| [![Navigation Part 1](https://img.youtube.com/vi/U28n4vSAwDk/0.jpg)](https://youtu.be/U28n4vSAwDk) | [![SLAM Part 2](https://img.youtube.com/vi/A-7UMoYXUBQ/0.jpg)](https://youtu.be/A-7UMoYXUBQ) |
-| *Navigation in a mapped environment* | *Real-time mapping with LiDAR* |
-
-| **Sensors and TF Frames** | **Mechanical Assembly** |
-|:---------------------:|:-----------------:|
-| [![Sensors Part 3](https://img.youtube.com/vi/dHnnpMOO5yg/0.jpg)](https://youtu.be/dHnnpMOO5yg) | [![Assembly](https://img.youtube.com/vi/buS84GiqQug/0.jpg)](https://youtu.be/buS84GiqQug) |
-| *RViz visualization and odometry* | *CAD design in Autodesk Inventor* |
-
-| **Mercury Robotics Competition** | **Teleoperation** |
-|:-----------------------------:|:--------------------------:|
-| [![Mercury Challenge 2019](https://img.youtube.com/vi/8E0mYynNUog/0.jpg)](https://youtu.be/8E0mYynNUog) | [![Teleop](https://img.youtube.com/vi/sHgdL3dffgw/0.jpg)](https://youtu.be/sHgdL3dffgw) |
-| *Axioma One at Mercury 2019* | *Teleoperation via Raspberry Pi + Flask* |
-
-</div>
-
----
 
 ## System Architecture
 
@@ -195,14 +77,6 @@ SLAM Toolbox runs in asynchronous mode, building graph-based 2D occupancy grid m
 The Nav2 stack integrates the NavFn global planner (Dijkstra), the DWB local controller (Dynamic Window Approach), dynamic costmaps with inflation and obstacle layers, and recovery behaviors (spin, backup, wait).
 
 ---
-
-## Mathematical Model
-
-<div align="center">
-<img src="images/modelo-matematico.png" width="800"/>
-</div>
-
-Complete differential 4WD skid-steering kinematic model. The diagram shows the robot geometry, control equations, Nav2 integration, and dynamic specifications.
 
 ### Key Parameters
 
@@ -244,13 +118,6 @@ ros-humble-robot-state-publisher   # URDF TF publishing
 ros-humble-tf2-tools           # TF debugging utilities
 ```
 
-### Recommended Hardware
-
-- **CPU**: Intel i5 8th Gen / AMD Ryzen 5 or higher (4+ cores)
-- **RAM**: 8 GB minimum, 16 GB recommended
-- **Storage**: 10 GB free disk space
-
----
 
 ## Installation
 
@@ -290,15 +157,6 @@ sudo apt install -y \
 sudo rosdep init && rosdep update
 ```
 
-### 4. Clone the Repository
-
-```bash
-mkdir -p ~/ros2/axioma_ws/src
-cd ~/ros2/axioma_ws/src
-git clone https://github.com/MrDavidAlv/Axioma_robot.git .
-```
-
----
 
 ## Build
 
@@ -435,24 +293,3 @@ Axioma_robot/
 ├── images/                        # Documentation images
 └── README.md
 ```
-
----
-
-## Physical Parameters
-
-| Parameter | Value | Source |
-|-----------|-------|--------|
-| Total mass | 5.525 kg | SDF model |
-| Dimensions (L x W x H) | 0.1356 x 0.1725 x 0.1 m | Geometry |
-| Wheel radius | 0.0381 m | model.sdf |
-| Friction coefficient | 1.0 (wheels), 0.0 (caster) | SDF |
-| Max torque | 20 N*m per wheel | model.sdf |
-| LiDAR (RPLidar A1) | 360 samples, 360 deg, 0.15-12 m, 5.5 Hz | SDF |
-
----
-
-## Contact
-
-**Author**: Mario David Alvarez Vallejo
-**Repository**: [github.com/MrDavidAlv/Axioma_robot](https://github.com/MrDavidAlv/Axioma_robot)
-**License**: BSD -- Free for academic and research use
