@@ -15,3 +15,7 @@ python3 mpc_expriments/mpc_liner_test.py --eta-low 0.4 --no-show   --save-prefix
 python3 mpc_expriments/mpc_s_test.py --no-show \
   --eta-omega 0.7 \
   --save-prefix mpc_expriments/docs/转向滑移侧漂对比
+
+#综合抗扰对比
+python3 mpc_expriments/mpc_mix.py --no-show --save-prefix mpc_expriments/docs/综合抗扰_mix
+
